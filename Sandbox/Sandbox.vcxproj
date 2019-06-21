@@ -57,7 +57,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>FS_PLATFORM_WINDOWS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)FSgameEngine\source;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FSgameEngine\vendor\spdlog\include;$(SolutionDir)FSgameEngine\source;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -72,7 +72,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>FS_PLATFORM_WINDOWS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)FSgameEngine\source;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FSgameEngine\vendor\spdlog\include;$(SolutionDir)FSgameEngine\source;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
