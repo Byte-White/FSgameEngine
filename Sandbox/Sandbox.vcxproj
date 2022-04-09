@@ -57,10 +57,12 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>FS_PLATFORM_WINDOWS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)FSgameEngine\vendor\spdlog\include;$(SolutionDir)FSgameEngine\source;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FSgameEngine\vendor\spdlog\include;$(SolutionDir)FSgameEngine\source;$(SolutionDir)FSgameEngine\vendor\imgui\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>D3D11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -72,21 +74,26 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>FS_PLATFORM_WINDOWS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)FSgameEngine\vendor\spdlog\include;$(SolutionDir)FSgameEngine\source;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FSgameEngine\vendor\spdlog\include;$(SolutionDir)FSgameEngine\source;$(SolutionDir)FSgameEngine\vendor\imgui\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>D3D11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\main.cpp" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FSgameEngine\FSgameEngine.vcxproj">
       <Project>{4a791c85-c033-4415-9bd7-c5bccd6e236f}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="source\main.cpp" />
+    <ProjectReference Include="..\ImGui\ImGui.vcxproj">
+      <Project>{4d8858c2-d00f-4ec1-b1b6-725653d98674}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

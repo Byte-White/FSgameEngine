@@ -27,7 +27,7 @@
     <ClInclude Include="source\FSgameEngine\EntryPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\FSgameEngine\Log.h">
+    <ClInclude Include="source\FSgameEngine\Logging\Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,7 +35,7 @@
     <ClCompile Include="source\FSgameEngine\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\FSgameEngine\Log.cpp">
+    <ClCompile Include="source\FSgameEngine\Logging\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -11,15 +11,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\FSgameEngine\Log.h" />
+    <ClInclude Include="source\FSgameEngine\Logging\Log.h" />
     <ClInclude Include="source\FSgameEngine.h" />
     <ClInclude Include="source\FSgameEngine\Application.h" />
     <ClInclude Include="source\FSgameEngine\Core.h" />
     <ClInclude Include="source\FSgameEngine\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\FSgameEngine\Log.cpp" />
+    <ClCompile Include="source\FSgameEngine\Logging\Log.cpp" />
     <ClCompile Include="source\FSgameEngine\Application.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImGui\ImGui.vcxproj">
+      <Project>{4d8858c2-d00f-4ec1-b1b6-725653d98674}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -68,10 +73,12 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>FS_PLATFORM_WINDOWS;FS_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)FSgameEngine\vendor\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FSgameEngine\vendor\spdlog\include;$(SolutionDir)FSgameEngine\vendor\imgui\include;$(SolutionDir)ImGui\source</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)FSgameEngine\vendor\imgui\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>D3D11.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -83,12 +90,14 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>FS_PLATFORM_WINDOWS;FS_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)FSgameEngine\vendor\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FSgameEngine\vendor\spdlog\include;$(SolutionDir)FSgameEngine\vendor\imgui\include;$(SolutionDir)ImGui\source</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)FSgameEngine\vendor\imgui\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>D3D11.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

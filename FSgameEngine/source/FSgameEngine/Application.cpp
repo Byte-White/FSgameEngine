@@ -9,9 +9,15 @@ namespace fs {
 	{
 
 	}
-	  void Application::Run()
+	
+	 void ApplicationMain()
+	 {
+
+	 }
+
+	void Application::Run()
 	{
-		while (true);
+
 	}
 
 }
