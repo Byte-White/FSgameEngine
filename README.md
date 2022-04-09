@@ -1,2 +1,2 @@
 # FSgameEngine
-Library for c++ game engine
+C++ Game Engine
