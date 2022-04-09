@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Core.h"
-#include "../../ImGui/source/imgui.h"
+#include "imgui.h"
 #include <d3d11.h>
 #include <tchar.h>
 
@@ -16,7 +16,6 @@ namespace fs {
 	public:
 		Application();
 		virtual ~Application();
-		int ApplicationMain();
 		virtual void Run();
 
 	};

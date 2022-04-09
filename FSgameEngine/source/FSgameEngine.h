@@ -4,7 +4,7 @@
 
 #include"FSgameEngine/Application.h"
 #include"FSgameEngine/Logging/Log.h"
-#include "../../ImGui/source/imgui.h"
+#include "imgui.h"
 
 //---Entry Point---------------------
 #include "FSgameEngine/EntryPoint.h"

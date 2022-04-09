@@ -1,15 +1,15 @@
 #pragma once
 
-#include "../../ImGui/source/imgui.h"
-#include "../../ImGui/source/imgui_impl_win32.h"
-#include "../../ImGui/source/imgui_impl_dx11.h"
+#include "imgui.h"
+#include "imgui_impl_win32.h"
+#include "imgui_impl_dx11.h"
 #include <d3d11.h>
 #include <tchar.h>
 #include <Windows.h>
 
 
 
-#ifdef FS_PLATFORM_WINDOWS
+#ifdef _WIN32
 
 extern fs::Application* fs::CreateApplication();
 
@@ -31,8 +31,9 @@ int main()
 {
 	fs::Log::Init();
 
-	FS_CORE_WARN("Intialized Logger!");
+	FS_CORE_INFO("Intialized Logger!");
 
+    FS_CORE_INFO("Creating Application...");
 	auto app = fs::CreateApplication();
     // Create application window
     //ImGui_ImplWin32_EnableDpiAwareness();
@@ -40,7 +41,7 @@ int main()
     ::RegisterClassEx(&wc);
     
     HWND hwnd = CreateWindow(wc.lpszClassName, _T("Name"), WS_OVERLAPPEDWINDOW, 100, 100, 1280, 800, NULL, NULL, wc.hInstance, NULL);
-
+    FS_CORE_INFO("Window initialized.");
     // Initialize Direct3D
     if (!CreateDeviceD3D(hwnd))
     {
@@ -152,6 +153,7 @@ int main()
         g_pSwapChain->Present(1, 0); // Present with vsync
         //g_pSwapChain->Present(0, 0); // Present without vsync
     }
+    FS_CORE_INFO("Cleaning up...");
     // Cleanup
     ImGui_ImplDX11_Shutdown();
     ImGui_ImplWin32_Shutdown();
@@ -161,6 +163,7 @@ int main()
     ::DestroyWindow(hwnd);
     ::UnregisterClass(wc.lpszClassName, wc.hInstance);
 
+    FS_CORE_INFO("closing application...");
 	delete app;
 }
 

@@ -11,7 +11,7 @@ public:
 	{
 		
 	}
-	void Run() override 
+	void Run() override
 	{
 		ImGui::Begin("Hi");
 		ImGui::Button("Say Hi");

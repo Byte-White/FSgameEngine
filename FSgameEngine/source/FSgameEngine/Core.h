@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef FS_PLATFORM_WINDOWS
+#ifdef _WIN32 
 	#ifdef FS_BUILD_DLL
 		#define FS_API __declspec(dllexport)
 	#elif defined FS_BUILD_STATIC
